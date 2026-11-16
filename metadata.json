@@ -1,0 +1,6 @@
+{
+  "name": "Celestial - Astrology, Horoscopes & Birth Chart Analysis",
+  "description": "Predict your future and daily horoscope with personalised cosmic insights, interactive birth chart analysis, and minimalist editorial design.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

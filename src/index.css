@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Instrument Serif', Georgia, serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --color-primary-text: #0f172a;
+    --color-muted-text: hsl(215, 25%, 32%);
+    --color-bg-basis: hsl(201, 100%, 13%);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-primary-text);
+    background-color: var(--color-bg-basis);
+    overflow-x: hidden;
+  }
+}
+
+.font-serif {
+  font-family: 'Instrument Serif', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Spec-compliant Editorial H1: 80px (mobile 48px), line-height: 0.95, letter-spacing: -2.46px, font-weight: 400 */
+.editorial-h1 {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -2.46px;
+}
+
+.editorial-h1 em {
+  font-style: normal;
+}
+
+/* Muted text color helper */
+.text-celestial-muted {
+  color: hsl(215, 25%, 32%);
+}
+
+.bg-celestial-basis {
+  background-color: hsl(201, 100%, 13%);
+}
+
+/* Animations & Micro-interactions: fade-rise keyframe */
+@keyframes fadeRise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-rise-0 {
+  animation: fadeRise 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-rise-200 {
+  animation: fadeRise 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-rise-400 {
+  animation: fadeRise 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+  opacity: 0;
+}
+
+/* Pill Action Button - Spec:
+   border-radius: 9999px; background-color: #000000; color: #ffffff;
+   small: padding 10px 24px; hero: padding 20px 56px;
+   hover: transform: scale(1.03) with 0.3s transition (or ease-in-out 200ms)
+*/
+.pill-action-btn {
+  border-radius: 9999px;
+  background-color: #000000;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.2s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  user-select: none;
+}
+
+.pill-action-btn:hover {
+  transform: scale(1.03);
+}
+
+.pill-action-btn:active {
+  transform: scale(0.99);
+}
+
+.pill-action-btn-small {
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pill-action-btn-hero {
+  padding: 20px 56px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Subtle starry background shine */
+.celestial-mesh {
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 80% 60%, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(245, 158, 11, 0.06) 0%, transparent 50%);
+}
+
+/* Glassmorphism for dark celestial mode */
+.celestial-card {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.celestial-card-light {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+/* Scrollbar polish */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.45);
+}
